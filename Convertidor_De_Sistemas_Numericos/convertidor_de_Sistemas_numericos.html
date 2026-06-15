@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Sistemas Numéricos</title>
+    <link rel="stylesheet" href="convertidor_de_Sistemas_numericos.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔢 Convertidor de Sistemas Numéricos</h1>
+            <p>Convierte números entre Decimal, Binario, Octal y Hexadecimal</p>
+        </div>
+
+        <div class="content">
+            <div class="error-message" id="errorMessage"></div>
+
+            <div class="input-section">
+                <div class="form-group">
+                    <label for="numberInput">Ingresa un número:</label>
+                    <div class="input-wrapper">
+                        <input
+                            type="text"
+                            id="numberInput"
+                            placeholder="Ej: 255"
+                            autocomplete="off"
+                        >
+                        <div class="selector-group">
+                            <label for="systemSelect">De</label>
+                            <select id="systemSelect">
+                                <option value="decimal">Decimal (Base 10)</option>
+                                <option value="binary">Binario (Base 2)</option>
+                                <option value="octal">Octal (Base 8)</option>
+                                <option value="hexadecimal">Hexadecimal (Base 16)</option>
+                            </select>
+                        </div>
+                        <div class="selector-group">
+                            <label for="targetSelect">A</label>
+                            <select id="targetSelect">
+                                <option value="binary">Binario (Base 2)</option>
+                                <option value="octal">Octal (Base 8)</option>
+                                <option value="decimal">Decimal (Base 10)</option>
+                                <option value="hexadecimal">Hexadecimal (Base 16)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn-convert" onclick="convertNumber()">Convertir</button>
+                    <button class="btn-clear" onclick="clearForm()">Limpiar</button>
+                </div>
+
+                <div class="info-note">
+                    💡 <strong>Tip:</strong> Puedes ingresar números en cualquier sistema y convertir a los otros tres. Para hexadecimal, usa dígitos 0-9 y letras A-F.
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection">
+                <div class="conversion-summary" id="conversionSummary"></div>
+                <div class="result-grid" id="resultGrid"></div>
+
+                <div class="procedure-section">
+                    <div class="procedure-header" onclick="toggleProcedure()">
+                        <div class="procedure-toggle" id="procedureToggle">▼</div>
+                        <div class="procedure-title">📋 Ver Procedimiento Detallado</div>
+                    </div>
+                    <div class="procedure-content" id="procedureContent"></div>
+                </div>
+            </div>
+
+            <div class="empty-state" id="emptyState">
+                Ingresa un número y selecciona su sistema numérico para comenzar
+            </div>
+        </div>
+    </div>
+
+    <script src="convertidor_de_Sistemas_numericos.js" defer></script>
+</body>
+</html>
